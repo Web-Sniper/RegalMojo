@@ -2,6 +2,10 @@ import React,{useState} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import Nav from '../Nav'
 import M from 'materialize-css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 const Signup = ()=>{
 
     const history = useHistory()
@@ -10,9 +14,18 @@ const Signup = ()=>{
     const [contact, setContact] = useState("")
     const [dob, setDob] = useState("")
     const [password, setPassword] = useState("")
+    var today = new Date()
+    
 
 
     const postData = ()=>{
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+            return M.toast({html: "Enter a valid email...",classes:"#e53935 red darken-1"})
+        }
+        else if(contact.length!==10){
+            return M.toast({html: "Enter a valid contact...",classes:"#e53935 red darken-1"})
+        }
+        
         fetch("/signup",{
             method: "post",
             headers:{
@@ -50,13 +63,15 @@ const Signup = ()=>{
                 value={email}
                 onChange={(e)=>setEmail(e.target.value)}
                 />
-                <input type="text" placeholder="Contact"
+                <input type="number" placeholder="Contact"
                 value={contact}
                 onChange={(e)=>setContact(e.target.value)} 
                 />
-                <input type="date" placeholder="Date of Birth" 
-                value={dob}
-                onChange={(e)=>setDob(e.target.value)}
+                <DatePicker placeholderText="Date of Birth(MM/DD/YYYY)" 
+                selected={dob}
+                onChange={date => setDob(date)}
+                minDate={new Date('01-01-1900')}
+                maxDate={today}
                 />
                 <input type="password" placeholder="Password" 
                 value={password}

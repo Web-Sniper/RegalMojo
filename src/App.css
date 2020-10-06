@@ -3,6 +3,13 @@
 body{
   font-family: 'Source Sans Pro', sans-serif;
 }
+.react-datepicker__input-container {
+  width: inherit;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
 
 .mynav{
   height: max-content;

@@ -1,12 +1,10 @@
-import React, { useEffect, useContext } from 'react'
+import React from 'react'
 import { Line, Bar,Radar } from 'react-chartjs-2';
-import {userContext} from '../../App'
 import DashboardNav from '../DashboardNav'
-import {useHistory} from 'react-router-dom'
+
 
 const Dashboard = () => {
-    const history = useHistory()
-    const {state, dispatch} = useContext(userContext)
+    
     const data = {
         labels: ['jan', 'feb', 'mar', 'apr', 'may'],
         datasets: [

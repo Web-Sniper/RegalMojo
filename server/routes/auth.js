@@ -22,9 +22,7 @@ router.post("/signup",(req,res)=>{
     if(!name||!email||!password||!contact||!dob){
         return res.status(422).json({error : "Fill all the fields.."})
     }
-    if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-        return res.status(422).json({error : "Invalid Email"})
-    }
+    
     User.findOne({email:email})
     .then((savedUser)=>{
         if(savedUser){

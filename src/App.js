@@ -1,4 +1,4 @@
-import React,{useContext,useEffect,createContext,useState, useReducer} from 'react';
+import React,{useContext,useEffect,createContext, useReducer} from 'react';
 import './App.css';
 import {Route, BrowserRouter, Switch, useHistory} from 'react-router-dom'
 import Login from './components/screens/Login';
@@ -13,7 +13,6 @@ export const userContext = createContext()
 const Routing = ()=>{
   const history = useHistory()
   const {state,dispatch} = useContext(userContext)
-  const [data, setData] = useState([])
   useEffect(()=>{
       const user = JSON.parse(localStorage.getItem("user"))
       if(user){

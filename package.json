@@ -13,7 +13,10 @@
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.10.0",
+    "react-date-picker": "^8.0.3",
+    "react-datepicker": "^3.2.2",
     "react-dom": "^16.13.1",
+    "react-message-box": "^1.0.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
