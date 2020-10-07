@@ -5,6 +5,7 @@ import DashboardNav from '../DashboardNav'
 
 const Dashboard = () => {
     
+    
     const data = {
         labels: ['jan', 'feb', 'mar', 'apr', 'may'],
         datasets: [

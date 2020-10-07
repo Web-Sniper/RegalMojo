@@ -43,7 +43,7 @@ const DashboardNav = ()=>{
                         <li>
                             <Link to="#">
                                 
-                               John Deo
+                               {state.name}
                                
                                
                             </Link>
