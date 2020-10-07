@@ -43,7 +43,8 @@ const DashboardNav = ()=>{
                         <li>
                             <Link to="#">
                                 
-                               {state.name}
+                               {
+                               state?state.name:"Loading..."}
                                
                                
                             </Link>
